@@ -4,7 +4,8 @@ Repository to save my progress on [Learn Go with Tests](https://quii.gitbook.io/
 
 ## How to run
 
-Inside a package, run:
+Inside a package, run `go test`. Example:
 ```
+cd go-fundamentals/hello-world
 go test
 ```
