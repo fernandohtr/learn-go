@@ -7,16 +7,19 @@ const portuguesePrefix = "Olá, "
 const spanishPrefix = "Hola, "
 
 func Hello(name string, language string) string {
+	var prefix string
+
 	if name == "" {
 		name = "world"
 	}
-	prefix := englishPrefix
 
 	switch language {
 	case "Portuguese":
 		prefix = portuguesePrefix
 	case "Spanish":
 		prefix = spanishPrefix
+	default:
+		prefix = englishPrefix
 	}
 
 	return prefix + name
