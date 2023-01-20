@@ -1,2 +1,5 @@
+build:
+	go build -v ./...
+
 test:
-	go test `go list ./...`
+	go test -v ./...
