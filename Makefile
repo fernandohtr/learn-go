@@ -6,3 +6,6 @@ test:
 
 benchmark:
 	go test -bench=. ./...
+
+cover:
+	go test -cover ./...
