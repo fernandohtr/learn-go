@@ -3,7 +3,8 @@ package structsmethodsinterfaces
 import "testing"
 
 func TestPerimeter(t *testing.T) {
-	received := Perimeter(10.0, 10.0)
+	rectangle := Rectangle{10.0, 10.0}
+	received := Perimeter(rectangle)
 	expected := 40.0
 
 	if received != expected {
@@ -11,8 +12,9 @@ func TestPerimeter(t *testing.T) {
 	}
 }
 
-func TestAr(t *testing.T) {
-	received := Area(12.0, 6.0)
+func TestArea(t *testing.T) {
+	rectangle := Rectangle{12.0, 6.0}
+	received := Area(rectangle)
 	expected := 72.0
 
 	if received != expected {
