@@ -36,9 +36,9 @@ func TestArea(t *testing.T) {
 			shape    Shape
 			expected float64
 		}{
-			{Rectangle{12, 6}, 72.0},
-			{Circle{10}, 314.1592653589793},
-			{Triangle{12, 6}, 36.0},
+			{shape: Rectangle{12, 6}, expected: 72.0},
+			{shape: Circle{10}, expected: 314.1592653589793},
+			{shape: Triangle{12, 6}, expected: 36.0},
 		}
 
 		for _, tt := range areaTests {
@@ -48,4 +48,26 @@ func TestArea(t *testing.T) {
 			}
 		}
 	})
+}
+
+func TestArea2(t *testing.T) {
+
+	areaTests := []struct {
+		name     string
+		shape    Shape
+		expected float64
+	}{
+		{name: "Rectangle", shape: Rectangle{12, 6}, expected: 72.0},
+		{name: "Circle", shape: Circle{10}, expected: 314.1592653589793},
+		{name: "Triangle", shape: Triangle{12, 6}, expected: 36.0},
+	}
+
+	for _, tt := range areaTests {
+		t.Run(tt.name, func(t *testing.T) {
+			received := tt.shape.Area()
+			if received != tt.expected {
+				t.Errorf("\n%#v\nreceived: %g\nexpected: %g", tt.shape, received, tt.expected)
+			}
+		})
+	}
 }
